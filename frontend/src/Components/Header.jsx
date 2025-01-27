@@ -25,7 +25,7 @@ useEffect(() => {
     // }, [])
     const fetchpasswords=async()=>{
       try {
-        const response=await axios.get("http://localhost:3000/pass/gpass",{
+        const response=await axios.get("https://password-mernapp.onrender.com/pass/gpass",{
           withCredentials:true,
           headers:{
             "Content-Type":"application/json"
@@ -61,7 +61,7 @@ useEffect(() => {
       //  localStorage.setItem("tpasswords",JSON.stringify([...totaldetails,{...details}]))
       //  console.log([...totaldetails,{...details}])
       try {
-        const response=await axios.post("http://localhost:3000/pass/password",{
+        const response=await axios.post("https://password-mernapp.onrender.com/pass/password",{
           website:details.website,
           username:details.username,
           password:details.password
@@ -103,7 +103,7 @@ useEffect(() => {
           // localStorage.setItem("tpasswords",JSON.stringify(totaldetails.filter(item=>item.username!==username)))
 
           try {
-            await axios.delete(`http://localhost:3000/pass/delete/${id}`,{
+            await axios.delete(`https://password-mernapp.onrender.com/pass/delete/${id}`,{
               withCredentials:true,
             });
             settotaldetails(totaldetails.filter(item=>item._id!==id)) 

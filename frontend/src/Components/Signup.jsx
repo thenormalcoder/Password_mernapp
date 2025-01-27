@@ -20,7 +20,7 @@ const Signup = () => {
   //     email:signd.email,
   //     password:signd.password
   //   }
-  //   await axios.post("http://localhost:3000/user/signup",userinfo)
+  //   await axios.post("https://password-mernapp-1.onrender.com/user/signup",userinfo)
   //   .then((res)=>{
   //     console.log(`${res.data}`)
   //     if(res.data){
@@ -60,7 +60,7 @@ const Signup = () => {
         password:signd.password
       }
       console.log(userinfo)
-      const {data}=await axios.post("https://password-mernapp.onrender.com/user/signup",
+      const {data}=await axios.post("https://password-mernapp-1.onrender.com/user/signup",
         userinfo,{
         withCredentials:true,
         headers:{

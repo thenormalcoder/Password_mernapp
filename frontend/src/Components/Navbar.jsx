@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const logoutclick=async()=>{
     try {
-      await axios.get("https://password-mernapp.onrender.com/user/logout",{
+      await axios.get("https://password-mernapp-1.onrender.com/user/logout",{
         withCredentials:true
       })
       toast.success("logout successfull")

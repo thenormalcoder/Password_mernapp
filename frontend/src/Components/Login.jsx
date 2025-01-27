@@ -17,7 +17,7 @@ const Login = () => {
   //     email:signd.email,
   //     password:signd.password
   //   }
-  //   await axios.post("http://localhost:3000/user/login",userinfo)
+  //   await axios.post("https://password-mernapp-1.onrender.com/user/login",userinfo)
   //   .then((res)=>{
   //     console.log(`${res.data}`)
   //     if(res.data){
@@ -45,7 +45,7 @@ const Login = () => {
        password:signd.password
      }
      console.log(userinfo)
-     const {data}=await axios.post("https://password-mernapp.onrender.com/user/login",
+     const {data}=await axios.post("https://password-mernapp-1.onrender.com/user/login",
        userinfo,{
        withCredentials:true,
        headers:{

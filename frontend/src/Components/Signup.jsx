@@ -60,7 +60,7 @@ const Signup = () => {
         password:signd.password
       }
       console.log(userinfo)
-      const {data}=await axios.post("https://password-mernapp-1.onrender.com/user/signup",
+      const {data}=await axios.post("http://localhost:3000/user/signup",
         userinfo,{
         withCredentials:true,
         headers:{

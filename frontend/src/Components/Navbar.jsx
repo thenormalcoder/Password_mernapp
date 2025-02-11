@@ -3,9 +3,11 @@ import { Navigate, NavLink } from 'react-router-dom'
 import { useauth } from '../context/Authprovider'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Login from './Login';
 const Navbar = () => {
   const [authuser,setauthuser]=useauth();
   console.log(authuser)
+  const token=localStorage.getItem("jwt");
   // const logoutclick=()=>{
   //   try {
   //     setauthuser({...authuser,user:null,})
@@ -45,7 +47,7 @@ const Navbar = () => {
            <NavLink to="/"><li className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 py-2 md:py-1 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>Home</li></NavLink>
            <NavLink to="/about"><li className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 py-2 md:py-1 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>About</li></NavLink>
            <NavLink to="/contact"><li className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 py-2 md:py-1 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>Contact</li></NavLink>
-           { authuser ? <div className='userlogout flex text-white justify-center items-center'><p className='bg-blue-500 text-sm md:text-xl mx-1 md:mx-4 px-0 md:px-2 md:py-1 py-1 rounded-2xl text-center  text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>"Hello User"</p><NavLink to="/login"><li onClick={logoutclick} className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 md:py-1 py-2 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>Logout</li></NavLink></div>:
+           { token ? <div className='userlogout flex text-white justify-center items-center'><p className='bg-blue-500 text-sm md:text-xl mx-1 md:mx-4 px-0 md:px-2 md:py-1 py-1 rounded-2xl text-center  text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>"Hello User"</p><NavLink to="/login"><li onClick={logoutclick} className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 md:py-1 py-2 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>Logout</li></NavLink></div>:
             <NavLink to="/login"><li  className='bg-blue-500 text-base md:text-xl mx-1 md:mx-4 px-1 md:px-2 md:py-1 py-2 rounded-2xl cursor-pointer text-white hover:bg-blue-600 font-semibold hover:font-bold hover:transition-none'>Login</li></NavLink> 
            }
            

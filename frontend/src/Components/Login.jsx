@@ -7,6 +7,7 @@ const Login = () => {
   const  [signd, setsignd] = useState({email:"",password:""})
   const [tsignup, settsignup] = useState([]);
   const navigateto=useNavigate();
+  
   const handlechange=(e)=>{
     setsignd({...signd,[e.target.name]:e.target.value})
     console.log({...signd,[e.target.name]:e.target.value})
@@ -45,7 +46,7 @@ const Login = () => {
        password:signd.password
      }
      console.log(userinfo)
-     const {data}=await axios.post("https://password-mernapp-1.onrender.com/user/login",
+     const {data}=await axios.post("http://localhost:3000/user/login",
        userinfo,{
        withCredentials:true,
        headers:{
